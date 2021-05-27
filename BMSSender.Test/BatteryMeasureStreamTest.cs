@@ -18,7 +18,7 @@ namespace BMSSender.Test
         public void GivenReadingCount_WhenValidInput_ReturnsTrue()
         {
             bool _isValidReadingCount = UserInputValidation.IsNumeric("15");
-            Assert.IsFalse(_isValidReadingCount);
+            Assert.IsTrue(_isValidReadingCount);
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace BMSSender.Test
         public void GivenReadingCount_WhenGreaterOrEquals15_ReturnsTrue()
         {
             bool _isValidReadingCount = UserInputValidation.IsGreaterThanOrEqualTo15("20");
-            Assert.IsFalse(_isValidReadingCount);
+            Assert.IsTrue(_isValidReadingCount);
         }
 
         [TestMethod]
