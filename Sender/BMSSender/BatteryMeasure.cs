@@ -8,7 +8,13 @@ namespace BMSSender
 {
     public class BatteryMeasures
     {
-        double Temperature { get; set; }
-        double soc { get; set; }
+        public double Temperature;
+        public double StateOfCharge;
+        public BatteryMeasures(double temperature, double soc)
+        {
+            this.Temperature = temperature;
+            this.StateOfCharge = soc;
+        }
     }
+
 }
