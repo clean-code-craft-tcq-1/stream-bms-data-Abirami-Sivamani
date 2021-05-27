@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-      <ProjectReference Include="..\Sender\BMSSender\BMSSender.csproj" />
+      <ProjectReference Include="..\BMSSender\BMSSender.csproj" />
   </ItemGroup>
 
 </Project>
