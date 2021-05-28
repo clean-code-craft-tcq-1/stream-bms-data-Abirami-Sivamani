@@ -17,7 +17,7 @@ namespace BMSSender
             if (UserInputValidation.IsNumeric(ReadingCount) && UserInputValidation.IsGreaterThanOrEqualTo15(ReadingCount))
             {
                 BatteryMeasureStream BMS = new BatteryMeasureStream();
-                BMS.CreateBatteryMeasureReadings(int.Parse(ReadingCount));
+                BMS.CreateBatteryMeasureReadingsList(int.Parse(ReadingCount));
                 BMS.PrintBatteryMeasureReadings();
             }
             else
