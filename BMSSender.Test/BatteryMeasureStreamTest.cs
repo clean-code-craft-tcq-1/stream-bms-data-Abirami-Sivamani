@@ -39,8 +39,24 @@ namespace BMSSender.Test
         public void GivenReadingCount_WhenValidCount_CreatesReadingList()
         {
             BatteryMeasureStream measures = new BatteryMeasureStream();
-            measures.CreateBatteryMeasureReadings(15);
-            Assert.IsNotNull(measures._readings.Count);
+            measures.CreateBatteryMeasureReadingsList(15);
+            Assert.IsTrue(measures._readings.Count >= 15);
+        }
+
+        [TestMethod]
+        public void GenerateTemperatureValue_ReturnsDoubleTypeValueWithinExtremeLimits()
+        {
+            BatteryMeasureStream batteryMeasure = new BatteryMeasureStream();
+            double _temp = batteryMeasure.GenerateBatteryTemperatureValue();
+            Assert.IsTrue(BatteryExtremeLimit.MaxTemperature > _temp && BatteryExtremeLimit.MinTemperature < _temp );
+        }
+
+        [TestMethod]
+        public void GenerateSOCValue_ReturnsDoubleTypeValueWithinExtremeLimits()
+        {
+            BatteryMeasureStream batteryMeasure = new BatteryMeasureStream();
+            double _soc = batteryMeasure.GenerateBatterySOCValue();
+            Assert.IsTrue(BatteryExtremeLimit.MaxSoc > _soc && BatteryExtremeLimit.MinSoc <  _soc);
         }
     }
 }
