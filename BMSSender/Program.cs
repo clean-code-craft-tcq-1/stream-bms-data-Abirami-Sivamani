@@ -10,9 +10,9 @@ namespace BMSSender
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Application Started");
+            Console.WriteLine("Battery Measure Streaming Started");
         start:
-            Console.WriteLine("Please enter number of BMS readings (Minimum 15):");
+            Console.WriteLine("Please enter number of BMS readings to be streamed(Minimum 15):");
             string ReadingCount = Console.ReadLine();
             if (UserInputValidation.IsNumeric(ReadingCount) && UserInputValidation.IsGreaterThanOrEqualTo15(ReadingCount))
             {
