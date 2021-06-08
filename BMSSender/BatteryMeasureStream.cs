@@ -8,26 +8,16 @@ namespace BMSSender
 {
     public class BatteryMeasureStream
     {
-        Random _randomNumber = new Random();
         public List<BatteryMeasures> _readings = new List<BatteryMeasures>();
+        
         public void CreateBatteryMeasureReadingsList(int Readingcount)
         {
             for (int count = 1; count <= Readingcount; count++)
             {
-                double Temp = GenerateBatteryTemperatureValue();
-                double Soc = GenerateBatterySOCValue();
+                double Temp = new TemperatureMeasure().BatteryMeasureValueGenerator();
+                double Soc = new SOCMeasure().BatteryMeasureValueGenerator();
                 _readings.Add(new BatteryMeasures(Temp, Soc));
             }
-        }
-
-        public double GenerateBatteryTemperatureValue()
-        {
-            return Math.Round((_randomNumber.NextDouble() * (BatteryExtremeLimit.MaxTemperature - BatteryExtremeLimit.MinTemperature) + BatteryExtremeLimit.MinTemperature), 2);
-        }
-        
-        public double GenerateBatterySOCValue()
-        {
-            return Math.Round((_randomNumber.NextDouble() * (BatteryExtremeLimit.MaxSoc - BatteryExtremeLimit.MinSoc) + BatteryExtremeLimit.MinTemperature), 2);
         }
 
         public void PrintBatteryMeasureReadings()
