@@ -12,7 +12,7 @@ namespace BMSSender
         Random _randomNumber = new Random();
         public double BatteryMeasureValueGenerator()
         {
-            return Math.Round((_randomNumber.NextDouble() * (BatteryExtremeLimit.MaxSoc - BatteryExtremeLimit.MinSoc) + BatteryExtremeLimit.MinTemperature), 2);
+            return Math.Round((_randomNumber.NextDouble() * (BatteryExtremeLimit.MaxSoc - BatteryExtremeLimit.MinSoc) + BatteryExtremeLimit.MinSoc), 2);
         }
     }
 }
