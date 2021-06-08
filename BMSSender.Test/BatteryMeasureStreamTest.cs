@@ -56,7 +56,7 @@ namespace BMSSender.Test
         {
             SOCMeasure batteryMeasure = new SOCMeasure();
             double _soc = batteryMeasure.BatteryMeasureValueGenerator();
-            Assert.IsNotNull(_soc);
+            Assert.IsTrue(BatteryExtremeLimit.MaxSoc > _soc && BatteryExtremeLimit.MinSoc <  _soc);
         }
     }
 }
