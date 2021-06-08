@@ -46,16 +46,16 @@ namespace BMSSender.Test
         [TestMethod]
         public void GenerateTemperatureValue_ReturnsDoubleTypeValueWithinExtremeLimits()
         {
-            BatteryMeasureStream batteryMeasure = new BatteryMeasureStream();
-            double _temp = batteryMeasure.GenerateBatteryTemperatureValue();
+            TemperatureMeasure batteryMeasure = new TemperatureMeasure();
+            double _temp = batteryMeasure.BatteryMeasureValueGenerator();
             Assert.IsTrue(BatteryExtremeLimit.MaxTemperature > _temp && BatteryExtremeLimit.MinTemperature < _temp );
         }
 
         [TestMethod]
         public void GenerateSOCValue_ReturnsDoubleTypeValueWithinExtremeLimits()
         {
-            BatteryMeasureStream batteryMeasure = new BatteryMeasureStream();
-            double _soc = batteryMeasure.GenerateBatterySOCValue();
+            SOCMeasure batteryMeasure = new SOCMeasure();
+            double _soc = batteryMeasure.BatteryMeasureValueGenerator();
             Assert.IsTrue(BatteryExtremeLimit.MaxSoc > _soc && BatteryExtremeLimit.MinSoc <  _soc);
         }
     }
